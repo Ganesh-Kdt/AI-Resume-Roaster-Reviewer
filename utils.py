@@ -1,25 +1,38 @@
 import re
-import pdfplumber
+import io
 import collections,math
 from typing import List
 import difflib
+from pypdf import PdfReader
 
 BULLET_RE = re.compile(
     r"^\s*(?:[\u2022\u2023\u25E6\u2043\u2219\-\*\u00B7]|[0-9]+[.)])\s*"
 )  # •, -, *, 1)
 
 def extract_text_from_pdf(file_obj) -> str:
-
     try:
         file_obj.seek(0)
     except Exception:
         pass
 
+    # Read the file content
+    if hasattr(file_obj, 'read'):
+        data = file_obj.read()
+    else:
+        data = file_obj
+    
+    # Convert to BytesIO if needed
+    if not isinstance(data, (bytes, bytearray)):
+        data = io.BytesIO(data).read()
+    
+    reader = PdfReader(io.BytesIO(data))
+    
     raw_lines: list[str] = []
-    with pdfplumber.open(file_obj) as pdf:
-        for page in pdf.pages:
-            page_text = page.extract_text() or ""
-            raw_lines.extend(page_text.splitlines())
+    
+    # Extract text from each page using pypdf
+    for page in reader.pages:
+        page_text = page.extract_text() or ""
+        raw_lines.extend(page_text.splitlines())
 
     merged_lines: list[str] = []
     current_bullet: str | None = None

@@ -1,8 +1,8 @@
 streamlit
 openai
-pdfplumber
 python-docx
 pypandoc         
 docx2pdf          
 pdf2image
 pillow
+pypdf
