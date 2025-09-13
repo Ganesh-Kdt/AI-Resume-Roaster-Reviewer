@@ -1,16 +1,16 @@
-# 🔥 AI Resume Roaster + Rewriter
+# AI Resume Roaster + Rewriter
 
 An intelligent AI-powered application that analyzes resumes, provides brutally honest feedback, and automatically rewrites bullet points to improve your chances of landing interviews. Built with Streamlit and OpenAI's GPT models.
 
 ## ✨ Features
 
-- **📄 PDF Resume Processing**: Upload and extract text from PDF resumes
-- **🎯 Job-Specific Analysis**: Tailored feedback based on your target job role
-- **🤖 AI-Powered Feedback**: Brutal but constructive resume roasting from AI hiring managers
-- **✍️ Automatic Rewriting**: AI rewrites weak bullet points with strong action verbs and metrics
-- **📊 ATS Score Calculation**: Get a numerical score to measure resume effectiveness
-- **🔍 Vision Analysis**: Uses GPT-Vision to analyze resume formatting and layout
-- **💾 Download Updated Resume**: Get your improved resume as a text file
+- **PDF Resume Processing**: Upload and extract text from PDF resumes
+- **Job-Specific Analysis**: Tailored feedback based on your target job role
+- **AI-Powered Feedback**: Brutal but constructive resume roasting from AI hiring managers
+- **Automatic Rewriting**: AI rewrites weak bullet points with strong action verbs and metrics
+- **ATS Score Calculation**: Get a numerical score to measure resume effectiveness
+- **Vision Analysis**: Uses GPT-Vision to analyze resume formatting and layout
+- **Download Updated Resume**: Get your improved resume as a text file
 
 ## 🚀 How It Works
 
@@ -37,7 +37,7 @@ An intelligent AI-powered application that analyzes resumes, provides brutally h
 1. **Clone the repository**
    ```bash
    git clone <your-repo-url>
-   cd AI-Resume-Roaster
+   cd AI-Resume-Roaster-Reviewer
    ```
 
 2. **Install dependencies**
@@ -91,10 +91,6 @@ An intelligent AI-powered application that analyzes resumes, provides brutally h
    - Check your ATS score
 
 ## 🔧 Configuration
-
-### File Size Limits
-- **10MB upload limit** configured in `.streamlit/config.toml`
-- Automatically enforced by Streamlit server
 
 ### AI Model Settings
 - **Default Model**: GPT-4o (Vision)
